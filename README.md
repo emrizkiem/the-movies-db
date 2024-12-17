@@ -1,2 +1,2 @@
-# the-movies-db
-This is project UiKit and SwiftUI with TheMoviesDb
+# TheMoviesDb 
+This is project use UIKit and SwiftUI for development
