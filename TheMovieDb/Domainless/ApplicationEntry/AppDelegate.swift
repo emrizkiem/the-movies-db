@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func loadAppBehaviour() {
-    let mainController = BaseViewController() as UIViewController
+    let mainController = SplashViewController() as UIViewController
     
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = mainController
