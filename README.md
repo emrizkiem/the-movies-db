@@ -1,5 +1,5 @@
 # TheMoviesDb
-This is project with UIKit hopefully implement clean architecture
+This is project with UIKit implement clean architecture
 
 ![Swift](https://img.shields.io/badge/Swift-Compatible-orange?style=flat-square)
 ![iOS](https://img.shields.io/badge/iOS-15.0-orange?style=flat-square)
@@ -7,6 +7,5 @@ This is project with UIKit hopefully implement clean architecture
 
 ### Tech Stack
 1. MVVM Architecture
-2. Reactive Programming with RXSwift
-3. Moya
-4. 
+2. Modularization
+3. Reactive Programming with Combine
