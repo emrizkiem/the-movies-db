@@ -19,6 +19,14 @@ open class SplashViewController: BaseViewController {
     return imageView
   }()
   
+  public init() {
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required public init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   open override func configureViews() {
     view.backgroundColor = Color.primaryColor
     

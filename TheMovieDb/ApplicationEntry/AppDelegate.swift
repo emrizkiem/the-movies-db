@@ -6,18 +6,24 @@
 //
 
 import UIKit
+import Shared
 import Splashscreen
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
+  var screenView: ScreenView?
+  var navigator: Navigator?
+  var moduleFactory: ModuleFactory?
   
   func loadAppBehaviour() {
-    let mainController = SplashViewController() as UIViewController
-    
     window = UIWindow(frame: UIScreen.main.bounds)
-    window?.rootViewController = mainController
-    window?.makeKeyAndVisible()
+    
+    moduleFactory = ModuleFactory()
+    screenView = ScreenView(window: window)
+    navigator = Navigator(screenView: screenView!, moduleFactory: moduleFactory!)
+    
+    navigator?.goTo(.splash)
   }
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
