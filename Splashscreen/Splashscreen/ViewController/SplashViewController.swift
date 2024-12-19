@@ -8,8 +8,9 @@
 import UIKit
 import Shared
 
-open class SplashViewController: BaseViewController {
+public class SplashViewController: UIViewController, NavigatorProtocol {
   private let viewModel = SplashViewModel()
+  public var navigator: Navigator?
   
   private let logoImageView: UIImageView = {
     let imageView = UIImageView()
@@ -27,10 +28,12 @@ open class SplashViewController: BaseViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
-  open override func configureViews() {
+  public override func viewDidLoad() {
+    super.viewDidLoad()
     view.backgroundColor = Color.primaryColor
     
     setupLogo()
+    bindViewModel()
     startBounceAnimation()
   }
   
@@ -47,7 +50,7 @@ open class SplashViewController: BaseViewController {
   
   private func bindViewModel() {
     viewModel.onAnimationCompleted = { [weak self] in
-      
+      self?.navigator?.goTo(.home)
     }
   }
   

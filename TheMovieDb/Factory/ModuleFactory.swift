@@ -8,6 +8,7 @@
 import UIKit
 import Shared
 import Splashscreen
+import Home
 
 public class ModuleFactory: ModuleFactoryProtocol {
   public init() {}
@@ -17,7 +18,7 @@ public class ModuleFactory: ModuleFactoryProtocol {
   }
   
   public func createHomeViewController() -> UIViewController {
-    return UIViewController()
+    return HomeViewController()
   }
   
   public func createHomeDetailViewController() -> UIViewController {

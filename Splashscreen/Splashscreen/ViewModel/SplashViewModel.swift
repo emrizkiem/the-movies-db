@@ -11,7 +11,7 @@ public class SplashViewModel {
   public var onAnimationCompleted: (() -> Void)?
   
   public func startAnimation() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    DispatchQueue.main.asyncAfter(deadline: .now()) {
       self.onAnimationCompleted?()
     }
   }

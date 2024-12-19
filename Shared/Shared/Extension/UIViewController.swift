@@ -22,7 +22,7 @@ protocol NavigationBarButtonHandler {
   func leftNavigationBarButtonTapped(sender: UIBarButtonItem?)
 }
 
-extension UIViewController {
+public extension UIViewController {
   private func setDefaultNavigationTheme() {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
     navigationController?.navigationBar.shadowImage = UIImage()
@@ -30,7 +30,7 @@ extension UIViewController {
     navigationController?.interactivePopGestureRecognizer?.delegate = nil
   }
   
-  func setNavigationBar(type: NavigationBarType) {
+  internal func setNavigationBar(type: NavigationBarType) {
     setDefaultNavigationTheme()
     
     switch type {

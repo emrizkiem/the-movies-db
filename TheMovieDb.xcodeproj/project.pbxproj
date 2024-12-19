@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED1FE9182D13FD5A00E51551 /* Home.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1FE9172D13FD5A00E51551 /* Home.framework */; };
+		ED1FE9192D13FD5A00E51551 /* Home.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED1FE9172D13FD5A00E51551 /* Home.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED7485342D12C933007DE244 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7485332D12C933007DE244 /* Shared.framework */; };
 		ED7485352D12C933007DE244 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED7485332D12C933007DE244 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ED9B30652D13BD2D007F732E /* Splashscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9B30642D13BD2D007F732E /* Splashscreen.framework */; };
@@ -39,6 +41,7 @@
 			files = (
 				ED7485352D12C933007DE244 /* Shared.framework in Embed Frameworks */,
 				ED9B30662D13BD2D007F732E /* Splashscreen.framework in Embed Frameworks */,
+				ED1FE9192D13FD5A00E51551 /* Home.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		ED1FE9172D13FD5A00E51551 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED51BD5C2D1162E1002A1DC8 /* TheMovieDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED51BD722D1162E5002A1DC8 /* TheMovieDbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED51BD7C2D1162E5002A1DC8 /* TheMovieDbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,7 @@
 			files = (
 				ED7485342D12C933007DE244 /* Shared.framework in Frameworks */,
 				ED9B30652D13BD2D007F732E /* Splashscreen.framework in Frameworks */,
+				ED1FE9182D13FD5A00E51551 /* Home.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +128,7 @@
 		ED7485322D12C933007DE244 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED1FE9172D13FD5A00E51551 /* Home.framework */,
 				ED9B30642D13BD2D007F732E /* Splashscreen.framework */,
 				ED7485332D12C933007DE244 /* Shared.framework */,
 			);

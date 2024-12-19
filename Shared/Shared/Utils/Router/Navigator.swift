@@ -23,8 +23,9 @@ public class Navigator {
     switch screenType {
     case .splash:
       navigateToSplash()
-    case .home,
-        .homeDetail,
+    case .home:
+      navigateToHome()
+    case .homeDetail,
         .search,
         .youtube:
       break
@@ -33,6 +34,17 @@ public class Navigator {
   
   private func navigateToSplash() {
     let splashVC = moduleFactory.createSplashViewController()
+    if let navigationInjectable = splashVC as? NavigatorProtocol {
+      navigationInjectable.navigator = self
+    }
     screenView.setRootViewController(splashVC)
+  }
+  
+  private func navigateToHome() {
+    let homeVC = moduleFactory.createHomeViewController()
+    if let navigationInjectable = homeVC as? NavigatorProtocol {
+      navigationInjectable.navigator = self
+    }
+    screenView.pushViewController(homeVC)
   }
 }

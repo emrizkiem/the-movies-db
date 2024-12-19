@@ -7,15 +7,15 @@
 
 import UIKit
 
-open class BaseViewController: UIViewController {
+public class BaseViewController: UIViewController {
   
-  var hideNavigationBar: Bool = true {
+  public var hideNavigationBar: Bool = true {
     didSet {
       self.navigationController?.isNavigationBarHidden = self.hideNavigationBar
     }
   }
   
-  var isTransparentNavigationBar: Bool = true {
+  public var isTransparentNavigationBar: Bool = true {
     didSet {
       if self.isTransparentNavigationBar {
         self.navigationController?.navigationBar.barTintColor = .clear
@@ -27,7 +27,7 @@ open class BaseViewController: UIViewController {
     }
   }
   
-  open override func viewDidLoad() {
+  public override func viewDidLoad() {
     super.viewDidLoad()
     
     requestAPI()
@@ -35,32 +35,32 @@ open class BaseViewController: UIViewController {
     observeViewModel()
   }
   
-  open override func viewWillAppear(_ animated: Bool) {
+  public override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
     navigationBar()
   }
   
-  open override func viewWillDisappear(_ animated: Bool) {
+  public override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     
     self.isTransparentNavigationBar = true
   }
   
-  internal override func leftNavigationBarButtonTapped(sender: UIBarButtonItem?) {
+  override func leftNavigationBarButtonTapped(sender: UIBarButtonItem?) {
     navigationController?.popViewController(animated: true)
   }
   
-  open func navigationBar() {
+  public func navigationBar() {
   }
   
-  open func configureViews() {
+  public func configureViews() {
   }
   
-  open func requestAPI() {
+  public func requestAPI() {
   }
   
-  open func observeViewModel() {
+  public func observeViewModel() {
   }
 }
 
