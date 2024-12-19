@@ -8,8 +8,10 @@
 import UIKit
 import Shared
 
-class SplashViewController: BaseViewController {
-  let logoImageView: UIImageView = {
+open class SplashViewController: BaseViewController {
+  private let viewModel = SplashViewModel()
+  
+  private let logoImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = Images.Common.imgSplash
     imageView.contentMode = .scaleAspectFit
@@ -17,7 +19,7 @@ class SplashViewController: BaseViewController {
     return imageView
   }()
   
-  override func configureViews() {
+  open override func configureViews() {
     view.backgroundColor = Color.primaryColor
     
     setupLogo()
@@ -35,6 +37,12 @@ class SplashViewController: BaseViewController {
     ])
   }
   
+  private func bindViewModel() {
+    viewModel.onAnimationCompleted = { [weak self] in
+      
+    }
+  }
+  
   private func startBounceAnimation() {
     logoImageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
     
@@ -47,8 +55,9 @@ class SplashViewController: BaseViewController {
       animations: {
         self.logoImageView.transform = .identity
       },
-      completion: { _ in
-      // Transition to main content after animation
-    })
+      completion: { [weak self] _ in
+        self?.viewModel.startAnimation()
+      }
+    )
   }
 }

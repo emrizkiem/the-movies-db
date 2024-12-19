@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		ED7485342D12C933007DE244 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7485332D12C933007DE244 /* Shared.framework */; };
 		ED7485352D12C933007DE244 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED7485332D12C933007DE244 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ED9B30652D13BD2D007F732E /* Splashscreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9B30642D13BD2D007F732E /* Splashscreen.framework */; };
+		ED9B30662D13BD2D007F732E /* Splashscreen.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED9B30642D13BD2D007F732E /* Splashscreen.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				ED7485352D12C933007DE244 /* Shared.framework in Embed Frameworks */,
+				ED9B30662D13BD2D007F732E /* Splashscreen.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +50,7 @@
 		ED51BD722D1162E5002A1DC8 /* TheMovieDbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED51BD7C2D1162E5002A1DC8 /* TheMovieDbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7485332D12C933007DE244 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9B30642D13BD2D007F732E /* Splashscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Splashscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -76,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED7485342D12C933007DE244 /* Shared.framework in Frameworks */,
+				ED9B30652D13BD2D007F732E /* Splashscreen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +123,7 @@
 		ED7485322D12C933007DE244 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED9B30642D13BD2D007F732E /* Splashscreen.framework */,
 				ED7485332D12C933007DE244 /* Shared.framework */,
 			);
 			name = Frameworks;

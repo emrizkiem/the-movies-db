@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Splashscreen
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
