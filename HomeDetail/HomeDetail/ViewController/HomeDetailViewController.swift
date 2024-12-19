@@ -1,13 +1,13 @@
 //
-//  HomeViewController.swift
-//  Home
+//  HomeDetailViewController.swift
+//  HomeDetail
 //
 //  Created by M. Rizki Maulana on 19/12/24.
 //
 
 import UIKit
 
-public class HomeViewController: UIViewController {
+class HomeDetailViewController: UIViewController {
   public init() {
     super.init(nibName: nil, bundle: nil)
   }
