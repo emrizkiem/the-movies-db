@@ -8,6 +8,8 @@
 import UIKit
 
 public class NetworkService: NetworkServiceProtocol {
+  public init() {}
+  
   public func request<T: Decodable>(
     endpoint: NetworkEndpoints,
     completion: @escaping (Result<T, any Error>) -> Void

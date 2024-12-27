@@ -8,6 +8,8 @@
 import UIKit
 
 public class HomeViewController: UIViewController {
+  private let viewModel = HomeViewModel()
+  
   public init() {
     super.init(nibName: nil, bundle: nil)
   }
@@ -20,5 +22,7 @@ public class HomeViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
     self.navigationController?.isNavigationBarHidden = true
+    
+    viewModel.fetchGenre()
   }
 }

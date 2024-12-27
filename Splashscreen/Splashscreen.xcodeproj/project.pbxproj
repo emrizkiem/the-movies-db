@@ -6,7 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ED274DB62D156056006CC8C6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED274DB52D156056006CC8C6 /* Shared.framework */; };
+		ED274DB72D156056006CC8C6 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED274DB52D156056006CC8C6 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED274DB82D156057006CC8C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED274DB72D156056006CC8C6 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		ED274DB52D156056006CC8C6 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9B30522D13B38E007F732E /* Splashscreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Splashscreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,16 +56,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED274DB62D156056006CC8C6 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED274DB42D156056006CC8C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED274DB52D156056006CC8C6 /* Shared.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED9B30482D13B38E007F732E = {
 			isa = PBXGroup;
 			children = (
 				ED9B30542D13B38E007F732E /* Splashscreen */,
+				ED274DB42D156056006CC8C6 /* Frameworks */,
 				ED9B30532D13B38E007F732E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,6 +109,7 @@
 				ED9B304E2D13B38E007F732E /* Sources */,
 				ED9B304F2D13B38E007F732E /* Frameworks */,
 				ED9B30502D13B38E007F732E /* Resources */,
+				ED274DB82D156057006CC8C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

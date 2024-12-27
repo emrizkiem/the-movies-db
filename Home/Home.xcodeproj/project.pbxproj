@@ -6,8 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		ED274DB12D156049006CC8C6 /* Shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED274DB02D156049006CC8C6 /* Shared.framework */; };
+		ED274DB22D156049006CC8C6 /* Shared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED274DB02D156049006CC8C6 /* Shared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ED274DB32D156049006CC8C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				ED274DB22D156049006CC8C6 /* Shared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		ED1FE9052D13FC6F00E51551 /* Home.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Home.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED274DB02D156049006CC8C6 /* Shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED274DB12D156049006CC8C6 /* Shared.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				ED1FE9072D13FC6F00E51551 /* Home */,
+				ED274DAF2D156049006CC8C6 /* Frameworks */,
 				ED1FE9062D13FC6F00E51551 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +78,14 @@
 				ED1FE9052D13FC6F00E51551 /* Home.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		ED274DAF2D156049006CC8C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED274DB02D156049006CC8C6 /* Shared.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +109,7 @@
 				ED1FE9012D13FC6F00E51551 /* Sources */,
 				ED1FE9022D13FC6F00E51551 /* Frameworks */,
 				ED1FE9032D13FC6F00E51551 /* Resources */,
+				ED274DB32D156049006CC8C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

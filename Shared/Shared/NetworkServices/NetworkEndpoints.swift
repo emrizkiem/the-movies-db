@@ -18,7 +18,7 @@ public enum NetworkEndpoints {
   private var path: String {
     switch self {
     case .genre:
-      return "genre/movie/list?language=en"
+      return "genre/movie/list"
     case .moviesByGenre:
       return "discover/movie?language=en-US"
     case .nowPlaying:
@@ -34,6 +34,8 @@ public enum NetworkEndpoints {
   
   private var queryParameters: [String: String]? {
     switch self {
+    case .genre:
+      return ["language": "en"]
     case .moviesByGenre(let genreId):
       return [
         "page": "1",
@@ -41,8 +43,7 @@ public enum NetworkEndpoints {
       ]
     case .nowPlaying:
       return ["page": "1"]
-    case .genre,
-        .moviesDetails,
+    case .moviesDetails,
         .videos,
         .cast:
       return nil
