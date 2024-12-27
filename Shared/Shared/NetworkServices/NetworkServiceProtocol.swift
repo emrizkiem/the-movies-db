@@ -6,12 +6,10 @@
 //
 
 import UIKit
+import Combine
 
 public protocol NetworkServiceProtocol {
-  func request<T: Decodable>(
-    endpoint: NetworkEndpoints,
-    completion: @escaping (Result<T, Error>) -> Void
-  )
+  func request<T: Decodable>(endpoint: NetworkEndpoints) -> AnyPublisher<T, Error>
 }
 
 public enum HTTPMethod: String {
