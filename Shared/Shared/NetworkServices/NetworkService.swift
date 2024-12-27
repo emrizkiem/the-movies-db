@@ -6,44 +6,38 @@
 //
 
 import UIKit
+import Combine
 
 public class NetworkService: NetworkServiceProtocol {
   public init() {}
   
-  public func request<T: Decodable>(
-    endpoint: NetworkEndpoints,
-    completion: @escaping (Result<T, any Error>) -> Void
-  ) {
-    guard let urlString = endpoint.url, let url = URL(string: urlString) else {
-      completion(.failure(NSError(domain: "Invalid URL", code: 400, userInfo: nil)))
-      return
+  public func request<T: Decodable>(endpoint: NetworkEndpoints) -> AnyPublisher<T, Error> {
+    guard let urlString = endpoint.url,
+          let url = URL(string: urlString) else {
+      return Fail(
+        error: NSError(
+          domain: "Invalid URL",
+          code: 400,
+          userInfo: nil
+        )
+      ).eraseToAnyPublisher()
     }
     
     var request = URLRequest(url: url)
     request.httpMethod = endpoint.method.rawValue
-    
     endpoint.headers.forEach { key, value in
       request.setValue(value, forHTTPHeaderField: key)
     }
     
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-      if let error {
-        completion(.failure(error))
-        return
+    return URLSession.shared.dataTaskPublisher(for: request)
+      .tryMap { output in
+        guard let httpResponse = output.response as? HTTPURLResponse,
+              (200...299).contains(httpResponse.statusCode) else {
+          throw URLError(.badServerResponse)
+        }
+        return output.data
       }
-      
-      guard let data else {
-        completion(.failure(NSError(domain: "No data", code: 400, userInfo: nil)))
-        return
-      }
-      
-      do {
-        let decodeResponse = try JSONDecoder().decode(T.self, from: data)
-        completion(.success(decodeResponse))
-      } catch {
-        completion(.failure(error))
-      }
-    }
-    task.resume()
+      .decode(type: T.self, decoder: JSONDecoder())
+      .eraseToAnyPublisher()
   }
 }

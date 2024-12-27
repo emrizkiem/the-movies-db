@@ -6,24 +6,34 @@
 //
 
 import UIKit
+import Combine
 import Shared
 
 public class HomeViewModel {
-  private let networkService = NetworkService()
-  private let endpoint = NetworkEndpoints.genre
+  @Published var genres: [Genres.GenreItem] = []
+  @Published var errorMessage: String?
   
-  public init() {}
+  private var cancellables: Set<AnyCancellable> = []
+  private let networkService: NetworkServiceProtocol
+  
+  public init(networkService: NetworkServiceProtocol = NetworkService()) {
+    self.networkService = networkService
+  }
   
   public func fetchGenre() {
-    networkService.request(endpoint: endpoint) { (result: Result<Genres, Error>) in
-      switch result {
-      case .success(let genres):
-        for genre in genres.genres {
-          print(genre)
+    let endpoint = NetworkEndpoints.genre
+    networkService.request(endpoint: endpoint)
+      .receive(on: DispatchQueue.main)
+      .sink(receiveCompletion: { completion in
+        switch completion {
+        case .finished:
+          break
+        case .failure(let error):
+          self.errorMessage = error.localizedDescription
         }
-      case .failure(let error):
-        print("Error: \(error.localizedDescription)")
-      }
-    }
+      }, receiveValue: { (response: Genres) in
+        self.genres = response.genres
+      })
+      .store(in: &self.cancellables)
   }
 }
