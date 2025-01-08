@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Shared
 
 public class HomeViewController: UIViewController {
   private let viewModel = HomeViewModel()
@@ -18,11 +19,24 @@ public class HomeViewController: UIViewController {
     fatalError("init(coder:) has not been implemented")
   }
   
+  public override var preferredStatusBarStyle: UIStatusBarStyle {
+    return .lightContent
+  }
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
-    self.navigationController?.isNavigationBarHidden = true
     
-    viewModel.fetchGenre()
+    initNavigationBar()
+  }
+  
+  private func initNavigationBar() {
+    setNavigationBar(type: .centerTitle(
+      leftButtons: [createBackButton(icon: "ic_menu")],
+      title: "Hey, Rizki Maul!",
+      titleSize: 18,
+      titleColor: .white,
+      backgroundColor: Color.primaryColor
+    ))
   }
 }
