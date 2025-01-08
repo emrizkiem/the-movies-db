@@ -28,6 +28,7 @@ public class HomeViewController: UIViewController {
     view.backgroundColor = .white
     
     initNavigationBar()
+    initSearchView()
   }
   
   private func initNavigationBar() {
@@ -38,5 +39,18 @@ public class HomeViewController: UIViewController {
       titleColor: .white,
       backgroundColor: Color.primaryColor
     ))
+  }
+  
+  private func initSearchView() {
+    let searchView = SearchView()
+    searchView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(searchView)
+    
+    NSLayoutConstraint.activate([
+      searchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      searchView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      searchView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      searchView.heightAnchor.constraint(equalToConstant: 100)
+    ])
   }
 }
