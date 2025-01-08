@@ -9,6 +9,7 @@ import UIKit
 
 public struct Color {
   public static let primaryColor     = UIColor(hex: "#B52B32")
+  public static let primaryDarkColor = UIColor(hex: "#912228")
   public static let primaryViewColor = UIColor(hex: "#1F1E1F")
   
   public static var gradientColorOrange: CAGradientLayer {
